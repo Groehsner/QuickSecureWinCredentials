@@ -45,7 +45,7 @@ Write-Host "Add new or update existing credentials. Start by entering a name to 
                 break MainLoop
             }
             # if we're here then the file was saved without error.
-            Write-Host "Credentials saved to file."
+            Write-Host "Credentials saved to file $CredentialsFile"
         }
 
         default {
