@@ -8,8 +8,8 @@
 $CredentialsFile = "C:\automation\scripts\sources\automationdata.xml"
 
 # update these for the script we're in
-$SourceSystem = "Ultradata"
-$DestinationSystem = "Vintek"
+$SourceSystem = "AWS"
+$DestinationSystem = "Azure"
 
 # read existing file
 try {
@@ -53,7 +53,7 @@ try {
     $DestinationPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($DestinationPasswordBinaryStringPointer)
     [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($DestinationPasswordBinaryStringPointer)
 } catch {
-    Write-Host "Error reading encrypted string. Probably because a different user or machine is trying to read this."
+    Write-Host "Error reading encrypted string. Probably because a user or machine different from ones created with, is trying to read this."
     Stop-Transcript
     exit
 }
